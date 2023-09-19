@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <RootNamespace>vitormcampos.com.br.UI</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,5 +13,13 @@
         <Link>.dockerignore</Link>
       </Content>
     </ItemGroup>
+
+
+
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Components\CardExperiencia\default.cshtml" />
+    </ItemGroup>
+
 
 </Project>

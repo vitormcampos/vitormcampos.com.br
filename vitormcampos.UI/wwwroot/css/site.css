@@ -1,0 +1,78 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.text-default {
+  color: #D1D1E4 !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-purple-50 {
+  color: #f4e6fd !important;
+}
+
+.text-purple-100 {
+  color: #dbb2f7 !important;
+}
+
+.text-purple-200 {
+  color: #ca8cf4 !important;
+}
+
+.text-purple-300 {
+  color: #b258ee !important;
+}
+
+.text-purple-300 {
+  color: #a337eb !important;
+}
+
+.fill-default {
+  fill: #D1D1E4 !important;
+}
+
+.fill-white {
+  fill: #fff !important;
+}
+
+.fill-purple-50 {
+  fill: #f4e6fd !important;
+}
+
+.fill-purple-100 {
+  fill: #dbb2f7 !important;
+}
+
+.fill-purple-200 {
+  fill: #ca8cf4 !important;
+}
+
+.fill-purple-300 {
+  fill: #b258ee !important;
+}
+
+.fill-purple-300 {
+  fill: #a337eb !important;
+}
+
+.background-color-1 {
+  background-color: #1F2034 !important;
+}
+
+.background-color-2 {
+  background-color: #25253D !important;
+}

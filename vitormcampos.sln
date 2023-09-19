@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vitormcampos.com.br.UI", "vitormcampos.com.br.UI\vitormcampos.com.br.UI.csproj", "{06B7E431-2E43-498E-A4FE-FC334D3EEA0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vitormcampos.UI", "vitormcampos.UI\vitormcampos.UI.csproj", "{06B7E431-2E43-498E-A4FE-FC334D3EEA0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
