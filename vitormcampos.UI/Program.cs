@@ -1,6 +1,10 @@
+using vitormcampos.com.br.UI;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
+
+builder.Services.AddScoped<SmtpService>();
 
 var app = builder.Build();
 

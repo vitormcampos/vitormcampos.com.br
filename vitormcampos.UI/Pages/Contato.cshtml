@@ -4,3 +4,22 @@
 @{
     ViewData["Title"] = "Contato";
 }
+
+<div class="container text-white h-75">
+    <div class="row align-items-center p-5" style="background-color: #25253D50">
+        <form method="post">
+            <h2 class="text-center">
+                Vamos transformar o seu negócio e impactar seus usuários?
+            </h2>
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label">Nome</label>
+                <input asp-for="Name" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">E-mail</label>
+                <input asp-for="Email" type="email" class="form-control">
+            </div>
+            <button type="submit" class="btn text-white background-color-purple-300">Enviar</button>
+        </form>
+    </div>
+</div>
