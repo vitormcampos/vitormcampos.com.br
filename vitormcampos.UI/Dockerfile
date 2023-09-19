@@ -5,16 +5,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["vitormcampos.com.br.UI/vitormcampos.com.br.UI.csproj", "vitormcampos.com.br.UI/"]
-RUN dotnet restore "vitormcampos.com.br.UI/vitormcampos.com.br.UI.csproj"
+COPY ["vitormcampos.UI.csproj", "vitormcampos.UI/"]
+RUN dotnet restore "vitormcampos.UI/vitormcampos.UI.csproj"
+WORKDIR "/src/vitormcampos.UI"
 COPY . .
-WORKDIR "/src/vitormcampos.com.br.UI"
-RUN dotnet build "vitormcampos.com.br.UI.csproj" -c Release -o /app/build
+RUN dotnet build "vitormcampos.UI.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "vitormcampos.com.br.UI.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "vitormcampos.UI.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "vitormcampos.com.br.UI.dll"]
+ENTRYPOINT ["dotnet", "vitormcampos.UI.dll"]
