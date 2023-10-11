@@ -1,6 +1,12 @@
+using dotenv.net;
 using vitormcampos.com.br.UI;
+using vitormcampos.com.br.UI.Services;
+
+DotEnv.Load();
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration.AddEnvironmentVariables();
 
 builder.Services.AddRazorPages();
 

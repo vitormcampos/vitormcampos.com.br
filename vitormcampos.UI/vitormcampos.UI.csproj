@@ -9,21 +9,27 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Content Include="..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
+        <Content Include="..\.dockerignore">
+            <Link>.dockerignore</Link>
+        </Content>
     </ItemGroup>
-
-
 
 
     <ItemGroup>
-      <_ContentIncludedByDefault Remove="Pages\Components\CardExperiencia\default.cshtml" />
+        <None Include=".env" CopyToOutputDirectory="PreserveNewest"/>
+        <None Update=".env.example">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="Pages\Components\CardExperiencia\default.cshtml"/>
+    </ItemGroup>
 
-
-
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageReference Include="dotenv.net" Version="3.0.0"/>
+    </ItemGroup>
 
 
 </Project>

@@ -80,3 +80,7 @@ html {
 .background-color-2 {
   background-color: #25253D !important;
 }
+
+.field-validation-error {
+  color: #a337eb !important;
+}

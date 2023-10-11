@@ -15,40 +15,39 @@
 </head>
 <body class="background-color-1 vh-100">
 <div class="container-fluid p-3">
-    <ul class="nav sticky-top justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link @(Context.Request.Path.ToString().Contains("index") ? "text-purple-300" : "text-white")"
-               href="/index">
-                <h5>Home</h5>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link @(Context.Request.Path.ToString().Contains("sobre") ? "text-purple-300" : "text-white")"
-               href="/sobre">
-                <h5>Sobre</h5>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link @(Context.Request.Path.ToString().Contains("habilidades") ? "text-purple-300" : "text-white")"
-               href="/habilidades">
-                <h5>Habilidades</h5>
-            </a>
-        </li>
-        @* <li class="nav-item"> *@
-        @*     <a class="nav-link @(Context.Request.Path.ToString().Contains("experiencia") ? "text-purple-300" : "text-white")" *@
-        @*        href="/experiencia"> *@
-        @*         <h5>Experiência</h5> *@
-        @*     </a> *@
-        @* </li> *@
-        @* <li class="nav-item"> *@
-        @*     <a class="nav-link @(Context.Request.Path.ToString().Contains("contato") ? "text-purple-300" : "text-white")" *@
-        @*        href="/contato"> *@
-        @*         <h5>Contato</h5> *@
-        @*     </a> *@
-        @* </li> *@
-    </ul>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-end">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars fa-2x text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link @(Context.Request.Path.ToString().Contains("index") ? "text-purple-300" : "text-white")"
+                       href="/index">
+                        <h5>Home</h5>
+                    </a>
+                    <a class="nav-link @(Context.Request.Path.ToString().Contains("sobre") ? "text-purple-300" : "text-white")"
+                       href="/sobre">
+                        <h5>Sobre</h5>
+                    </a>
+                    <a class="nav-link @(Context.Request.Path.ToString().Contains("habilidades") ? "text-purple-300" : "text-white")"
+                       href="/habilidades">
+                        <h5>Habilidades</h5>
+                    </a>
+                    <a class="nav-link @(Context.Request.Path.ToString().Contains("experiencia") ? "text-purple-300" : "text-white")"
+                       href="/experiencia">
+                        <h5>Experiência</h5>
+                    </a>
+                    <a class="nav-link @(Context.Request.Path.ToString().Contains("contato") ? "text-purple-300" : "text-white")"
+                       href="/contato">
+                        <h5>Contato</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 </div>
-<div class="container h-100">
+<div class="container h-75">
     <main role="main" class="pb-3 h-100">
         @RenderBody()
     </main>
@@ -56,6 +55,7 @@
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/0c2cf6e7e5.js" crossorigin="anonymous"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 
 @await RenderSectionAsync("Scripts", required: false)

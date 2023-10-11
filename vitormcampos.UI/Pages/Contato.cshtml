@@ -5,21 +5,52 @@
     ViewData["Title"] = "Contato";
 }
 
-<div class="container text-white h-75">
-    <div class="row align-items-center p-5" style="background-color: #25253D50">
-        <form method="post">
+<div class="container text-white h-100">
+    <div class="row align-items-center h-100">
+        <form method="post" class="p-5" style="background-color: #25253D50">
             <h2 class="text-center">
                 Vamos transformar o seu negócio e impactar seus usuários?
             </h2>
-            <div class="mb-3">
-                <label asp-for="Name" class="form-label">Nome</label>
-                <input asp-for="Name" type="text" class="form-control">
+            <div class="row mt-5">
+                <div class="col-md-6 offset-md-3">
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label">Nome</label>
+                        <input asp-for="Name" type="text" class="form-control">
+                        @Html.ValidationMessageFor(x => x.Name)
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">E-mail</label>
+                        <input asp-for="Email" type="email" class="form-control">
+                        @Html.ValidationMessageFor(expression: x => x.Email)
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Message" class="form-label">Mensagem</label>
+                        <textarea asp-for="Message" class="form-control" rows="5"></textarea>
+                        @Html.ValidationMessageFor(expression: x => x.Message)
+                    </div>
+                    <button type="submit" class="btn text-white background-color-purple-300">Enviar</button>
+                </div>
             </div>
-            <div class="mb-3">
-                <label asp-for="Email" class="form-label">E-mail</label>
-                <input asp-for="Email" type="email" class="form-control">
-            </div>
-            <button type="submit" class="btn text-white background-color-purple-300">Enviar</button>
+
         </form>
     </div>
+</div>
+<div class="fixed-bottom text-white">
+    <ul class="nav justify-content-end p-2">
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/vitormcampos" target="_blank">
+                <i class="fab fa-github text-white"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="mailto:contato@vitormcampos.com.br">
+                <i class="fas fa-envelope text-white"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/vitormcampos/" target="_blank">
+                <i class="fab fa-linkedin text-white"></i>
+            </a>
+        </li>
+    </ul>
 </div>
