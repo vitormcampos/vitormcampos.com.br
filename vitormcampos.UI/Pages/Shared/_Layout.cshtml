@@ -20,7 +20,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars fa-2x text-white"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link @(Context.Request.Path.ToString().Contains("index") ? "text-purple-300" : "text-white")"
                        href="/index">
@@ -34,10 +34,10 @@
                        href="/habilidades">
                         <h5>Habilidades</h5>
                     </a>
-                    <a class="nav-link @(Context.Request.Path.ToString().Contains("experiencia") ? "text-purple-300" : "text-white")"
-                       href="/experiencia">
-                        <h5>Experiência</h5>
-                    </a>
+                    @* <a class="nav-link @(Context.Request.Path.ToString().Contains("experiencia") ? "text-purple-300" : "text-white")" *@
+                    @*    href="/experiencia"> *@
+                    @*     <h5>Experiência</h5> *@
+                    @* </a> *@
                     <a class="nav-link @(Context.Request.Path.ToString().Contains("contato") ? "text-purple-300" : "text-white")"
                        href="/contato">
                         <h5>Contato</h5>
