@@ -14,12 +14,17 @@ public class SmtpService
         var smtp = env["SERVER"];
         var port = Convert.ToInt32(env["PORT"]);
         var email = env["EMAIL"];
-        
+
         var client = new SmtpClient(smtp, port)
         {
             Credentials = new NetworkCredential(userName, password),
             EnableSsl = true
         };
-        client.Send(email, email, $"Contato de {senderName}", $"Novo email de {senderName} com endereço {senderEmail}<br>${message}");
+        client.Send(
+            email,
+            email,
+            $@"Contato de {senderName}",
+            $"Novo email de {senderName} com endereço {senderEmail}\n{message}"
+        );
     }
 }
