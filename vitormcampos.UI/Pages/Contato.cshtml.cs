@@ -35,5 +35,7 @@ public class Contato : PageModel
         if (!ModelState.IsValid) return;
 
         _smtpService.Send(Name, Email, Message);
+
+        ViewData["isSent"] = true;
     }
 }

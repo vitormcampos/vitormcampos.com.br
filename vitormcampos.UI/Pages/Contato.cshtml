@@ -28,10 +28,20 @@
                         <textarea asp-for="Message" class="form-control" rows="5"></textarea>
                         @Html.ValidationMessageFor(expression: x => x.Message)
                     </div>
-                    <button type="submit" class="btn text-white background-color-purple-300">Enviar</button>
+                    @if (ViewData["isSent"] is not null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            Mensagem enviada! Obrigado pelo contato.
+                        </div>
+                    }
+                    else
+                    {
+                        <button id="submit-contact-form-button" type="submit" class="btn text-white background-color-purple-300">
+                            Enviar
+                        </button>
+                    }
                 </div>
             </div>
-
         </form>
     </div>
 </div>
@@ -54,3 +64,18 @@
         </li>
     </ul>
 </div>
+
+@section Scripts {
+    <script >
+        jQuery('form').on('submit', e => {
+            jQuery('#submit-contact-form-button')
+            .replaceWith(
+            `
+                <button class="btn text-white background-color-purple-300" type="button" disabled>
+                  <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                  <span role="status">Enviando...</span>
+                </button>
+            `)
+        })
+    </script>
+}
