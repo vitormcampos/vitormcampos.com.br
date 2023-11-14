@@ -15,12 +15,11 @@ builder.Services.AddScoped<SmtpService>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
-        builder =>
-        {
-            builder.AllowAnyOrigin()
+        b =>
+            b.AllowAnyOrigin()
                 .AllowAnyMethod()
-                .AllowAnyHeader();
-        });
+                .AllowAnyHeader()
+    );
 });
 
 var app = builder.Build();
