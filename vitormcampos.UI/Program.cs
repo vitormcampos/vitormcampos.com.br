@@ -12,6 +12,17 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddScoped<SmtpService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
