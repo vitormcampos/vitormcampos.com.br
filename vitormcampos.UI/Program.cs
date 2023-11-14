@@ -16,9 +16,11 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
         b =>
+        {
             b.AllowAnyOrigin()
                 .AllowAnyMethod()
-                .AllowAnyHeader()
+                .AllowAnyHeader();
+        }
     );
 });
 
@@ -34,10 +36,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseCors("AllowAll");
+
 app.UseAuthorization();
 
 app.MapRazorPages();
-
-app.UseCors("AllowAll");
 
 app.Run();
