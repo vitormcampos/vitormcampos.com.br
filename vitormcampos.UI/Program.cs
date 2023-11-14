@@ -38,4 +38,6 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+app.UseCors("AllowAll");
+
 app.Run();
