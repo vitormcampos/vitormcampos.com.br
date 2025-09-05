@@ -1,0 +1,50 @@
+﻿<style>
+    #hero-section picture img {
+        height: 350px;
+        width: 350px;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+
+    @@media (max-width: 800px) {
+        #hero-section picture img {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            border-radius: 100%;
+        }
+    }
+</style>
+
+<div class="container-fluid align-content-center background-color-1" style="min-height: 90vh;" id="hero-section">
+    <div class="row justify-content-center align-items-center mb-5">
+        <picture style="display: contents;">
+            <source media="(width < 800px)" srcset="~/images/perfil.webp" />
+            <source media="(width >= 800px)" srcset="~/images/perfil.webp" />
+            <img sizes="(width < 800px) 200px, 350px" src="~/images/perfil.webp" alt="Vitor Campos" />
+        </picture>
+    </div>
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 text-center">
+            <h1 class="text-purple-300">
+                Vitor Campos
+            </h1>
+            <p class="h2 text-purple-100">
+                Desenvolvedor .NET & Node.js
+            </p>
+            <div>
+                <a class="text-white mx-2" href="https://www.linkedin.com/in/vitormcampos/" target="_blank"
+                    aria-label="LinkedIn">
+                    <i class="bi bi-linkedin" style="font-size: x-large;"></i>
+                </a>
+
+                <a class="text-white mx-2" href="https://github.com/vitormcampos" target="_blank" aria-label="GitHub">
+                    <i class="bi bi-github" style="font-size: x-large;"></i>
+                </a>
+                <a class="text-white mx-2" href="mailto:contato@vitormcampos.com.br" target="_blank" aria-label="Email">
+                    <i class="bi bi-envelope-fill" style="font-size: x-large;"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

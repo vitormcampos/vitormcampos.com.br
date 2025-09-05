@@ -1,71 +1,131 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>@ViewData["Title"] - Vitor Campos</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="~/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="~/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon-16x16.png">
-    <link rel="manifest" href="~/images/site.webmanifest">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/vitormcampos.UI.styles.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<html lang="pt-BR">
 
-    <meta name="keywords" content="Programador, Desenvolvedor de Software, .NET, C#, NodeJS, backend, back-end, NestJS, SQL Server, Programação Orientada a Objetos, OOP">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vitor Campos - @ViewData["Title"]</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="~/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="~/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/favicon-16x16.png">
+    <link rel="manifest" href="~/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <meta name="keywords"
+        content="Programador, Desenvolvedor de Software, .NET, C#, NodeJS, backend, back-end, NestJS, SQL Server, Programação Orientada a Objetos, OOP">
+    <meta name="description"
+        content="Desenvolvedor de software com experiência em C#, ASP.NET Core, JavaScript, TypeScript e bancos de dados SQL. Especialista em APIs, Node.js (NestJS) e testes automatizados. Paixão por tecnologia e inovação.">
     <meta name="author" content="Vitor Campos">
     <meta name="robots" content="index, follow">
-    
+
     <meta property="og:title" content="@ViewData["Title"] - Vitor Campos">
-    <meta property="og:image" content="/images/apple-touch-icon.png">
+    <meta property="og:image" content="~/apple-icon.png">
     <meta property="og:type" content="profile">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body class="background-color-1 vh-100">
-<div class="container-fluid p-3">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex justify-content-end">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars fa-2x text-white"></i>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link @(Context.Request.Path.ToString().Contains("index") ? "text-purple-300" : "text-white")"
-                       href="/index">
-                        <h5>Home</h5>
-                    </a>
-                    <a class="nav-link @(Context.Request.Path.ToString().Contains("sobre") ? "text-purple-300" : "text-white")"
-                       href="/sobre">
-                        <h5>Sobre</h5>
-                    </a>
-                    <a class="nav-link @(Context.Request.Path.ToString().Contains("habilidades") ? "text-purple-300" : "text-white")"
-                       href="/habilidades">
-                        <h5>Habilidades</h5>
-                    </a>
-                    @* <a class="nav-link @(Context.Request.Path.ToString().Contains("experiencia") ? "text-purple-300" : "text-white")" *@
-                    @*    href="/experiencia"> *@
-                    @*     <h5>Experiência</h5> *@
-                    @* </a> *@
-                    <a class="nav-link @(Context.Request.Path.ToString().Contains("contato") ? "text-purple-300" : "text-white")"
-                       href="/contato">
-                        <h5>Contato</h5>
-                    </a>
+
+<body>
+    <header class="container-fluid p-3 background-color-1">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid d-flex justify-content-end" x-data="{ open: false }">
+                <button class="btn d-lg-none" type="button" aria-label="Menu de navegação" @@click="open = ! open">
+                    <i class="bi bi-list text-white" style="font-size: xx-large;"></i>
+                </button>
+                <div class="navbar-collapse justify-content-end" x-show="open" x-transition>
+                    <div class="navbar-nav">
+                        <a class="nav-link text-white"
+                            href="@(Context.Request.Path.ToString().Contains("index") ? "#hero-section" : "/index#hero-section")">
+                            <h5>Home</h5>
+                        </a>
+                        <a class=" nav-link text-white"
+                            href="@(Context.Request.Path.ToString().Contains("index") ? "#about-section" : "/index#about-section")">
+                            <h5>Sobre</h5>
+                        </a>
+                        <a class="nav-link text-white"
+                            href="@(Context.Request.Path.ToString().Contains("index") ? "#experience-section" : "/index#experience-section")">
+                            <h5>Experiência</h5>
+                        </a>
+                        @* <a class="nav-link @(Context.Request.Path.ToString().Contains("contato") ? "text-purple-300" : "text-white")"
+                            href="/contato">
+                            <h5>Contato</h5>
+                        </a> *@
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-</div>
-<div class="container h-75">
-    <main role="main" class="pb-3 h-100">
+        </nav>
+    </header>
+
+    <main role="main">
         @RenderBody()
     </main>
-</div>
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/0c2cf6e7e5.js" crossorigin="anonymous"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
+    <footer class="border-top footer text-muted text-center py-3">
+        <div class="row g-0">
+            <div class="col">
+                <p class="h5">
+                    &copy; 2025 - Vitor Campos
+                </p>
+            </div>
+            <div class="col">
+                <a class="text-black mx-2" href="https://www.linkedin.com/in/vitormcampos/" target="_blank"
+                    aria-label="LinkedIn">
+                    <i class="bi bi-linkedin" style="font-size: x-large;"></i>
+                </a>
 
-@await RenderSectionAsync("Scripts", required: false)
+                <a class="text-black mx-2" href="https://github.com/vitormcampos" target="_blank" aria-label="GitHub">
+                    <i class="bi bi-github" style="font-size: x-large;"></i>
+                </a>
+                <a class="text-black mx-2" href="mailto:contato@vitormcampos.com.br" target="_blank" aria-label="Email">
+                    <i class="bi bi-envelope-fill" style="font-size: x-large;"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="position-relative">
+        <div class="position-fixed" style="bottom: 20px; right: 20px;" x-data="scrollToTop">
+            <button class="btn btn-light rounded-circle" style="height: 70px; width: 70px; display: none;"
+                x-show="showTopButton" @@click="window.scrollTo({ top: 0, behavior: 'smooth' })" x-transition
+                class="fixed bottom-6 right-6 px-4 py-2 bg-blue-600 text-black rounded-full shadow-lg">
+                <i class="bi bi-chevron-up" style="font-size: xx-large;"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            showTopButton = false;
+
+            Alpine.data('scrollToTop', () => ({
+                init() {
+                    window.addEventListener('scroll', () => {
+                        this.showTopButton = window.scrollY > 200
+                    })
+                }
+            }))
+        })
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

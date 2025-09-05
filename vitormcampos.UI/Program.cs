@@ -1,5 +1,4 @@
 using dotenv.net;
-using vitormcampos.com.br.UI;
 using vitormcampos.com.br.UI.Services;
 
 DotEnv.Load();
@@ -14,12 +13,11 @@ builder.Services.AddScoped<SmtpService>();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll",
+    options.AddPolicy(
+        "AllowAll",
         b =>
         {
-            b.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader();
+            b.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
         }
     );
 });

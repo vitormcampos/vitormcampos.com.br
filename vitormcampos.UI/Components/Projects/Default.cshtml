@@ -1,0 +1,46 @@
+﻿@using vitormcampos.com.br.UI.Components
+
+@{
+    ViewData["Title"] = "Experiência";
+    var experiencias = ViewData["Experiencias"] as List<Experiencia>;
+    var projetosRelevantes = ViewData["ProjetosRelevantes"] as List<Projeto>;
+}
+
+<div class="container-fluid align-content-center min-vh-100 background-color-1 py-5" id="experience-section">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="text-purple-300">Timeline</h2>
+            <ul class="timeline text-purple-100">
+                @foreach (var exp in experiencias)
+                {
+                    <li>
+                        <b href="#">@exp.Titulo - @exp.Projeto</b>
+                        <span href="#" class="float-right">(@exp.Periodo)</span>
+                        <p>
+                        <ul class="text-white">
+                            @foreach (var desc in @exp.Descricao)
+                            {
+                                <li>@desc</li>
+                            }
+                        </ul>
+                        </p>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 class="text-purple-300">Projetos Relevantes</h2>
+            <ul class="text-purple-100">
+                @foreach (var projeto in projetosRelevantes)
+                {
+                    <li>
+                        <b href="#">@projeto.Titulo</b>
+                        <p class="text-white">@projeto.Descricao</p>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
