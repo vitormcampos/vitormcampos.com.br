@@ -49,15 +49,15 @@
                 </button>
                 <div class="navbar-collapse justify-content-end" x-show="open" x-transition>
                     <div class="navbar-nav">
-                        <a class="nav-link text-white"
+                        <a class="nav-link text-white text-decoration-none"
                             href="@(Context.Request.Path.ToString().Contains("index") ? "#hero-section" : "/index#hero-section")">
                             <h5>Home</h5>
                         </a>
-                        <a class=" nav-link text-white"
+                        <a class=" nav-link text-white text-decoration-none"
                             href="@(Context.Request.Path.ToString().Contains("index") ? "#about-section" : "/index#about-section")">
                             <h5>Sobre</h5>
                         </a>
-                        <a class="nav-link text-white"
+                        <a class="nav-link text-white text-decoration-none"
                             href="@(Context.Request.Path.ToString().Contains("index") ? "#experience-section" : "/index#experience-section")">
                             <h5>Experiência</h5>
                         </a>
@@ -83,15 +83,17 @@
                 </p>
             </div>
             <div class="col">
-                <a class="text-black mx-2" href="https://www.linkedin.com/in/vitormcampos/" target="_blank"
-                    aria-label="LinkedIn">
+                <a class="text-black text-decoration-none mx-2" href="https://www.linkedin.com/in/vitormcampos/"
+                    target="_blank" aria-label="LinkedIn">
                     <i class="bi bi-linkedin" style="font-size: x-large;"></i>
                 </a>
 
-                <a class="text-black mx-2" href="https://github.com/vitormcampos" target="_blank" aria-label="GitHub">
+                <a class="text-black text-decoration-none mx-2" href="https://github.com/vitormcampos" target="_blank"
+                    aria-label="GitHub">
                     <i class="bi bi-github" style="font-size: x-large;"></i>
                 </a>
-                <a class="text-black mx-2" href="mailto:contato@vitormcampos.com.br" target="_blank" aria-label="Email">
+                <a class="text-black text-decoration-none mx-2" href="mailto:contato@vitormcampos.com.br"
+                    target="_blank" aria-label="Email">
                     <i class="bi bi-envelope-fill" style="font-size: x-large;"></i>
                 </a>
             </div>

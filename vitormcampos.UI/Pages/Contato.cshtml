@@ -36,7 +36,8 @@
                     }
                     else
                     {
-                        <button id="submit-contact-form-button" type="submit" class="btn text-white background-color-purple-300">
+                        <button id="submit-contact-form-button" type="submit"
+                            class="btn text-white background-color-purple-300">
                             Enviar
                         </button>
                     }
@@ -48,17 +49,17 @@
 <div class="fixed-bottom text-white">
     <ul class="nav justify-content-end p-2">
         <li class="nav-item">
-            <a class="nav-link" href="https://github.com/vitormcampos" target="_blank">
+            <a class="nav-link text-decoration-none" href="https://github.com/vitormcampos" target="_blank">
                 <i class="fab fa-github text-white"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="mailto:contato@vitormcampos.com.br">
+            <a class="nav-link text-decoration-none" href="mailto:contato@vitormcampos.com.br">
                 <i class="fas fa-envelope text-white"></i>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/vitormcampos/" target="_blank">
+            <a class="nav-link text-decoration-none" href="https://www.linkedin.com/in/vitormcampos/" target="_blank">
                 <i class="fab fa-linkedin text-white"></i>
             </a>
         </li>
@@ -66,16 +67,16 @@
 </div>
 
 @section Scripts {
-    <script >
+    <script>
         jQuery('form').on('submit', e => {
             jQuery('#submit-contact-form-button')
-            .replaceWith(
-            `
-                <button class="btn text-white background-color-purple-300" type="button" disabled>
-                  <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                  <span role="status">Enviando...</span>
-                </button>
-            `)
+                .replaceWith(
+                    `
+                    <button class="btn text-white background-color-purple-300" type="button" disabled>
+                      <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                      <span role="status">Enviando...</span>
+                    </button>
+                `)
         })
     </script>
 }
